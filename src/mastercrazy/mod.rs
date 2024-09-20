@@ -21,8 +21,8 @@ static mut PUNCH : bool = false;
 static mut SHOCK : bool = false;
 static mut LASER : bool = false;
 static mut SCRATCH_BLOW : bool = false;
-static mut CONTROL_SPEED_MUL: f32 = 2.0;
-static mut CONTROL_SPEED_MUL_2: f32 = 0.05;
+static mut CONTROL_SPEED_MUL: f32 = 2.1;
+static mut CONTROL_SPEED_MUL_2: f32 = 0.09;
 
 static mut MASTER_X_POS: f32 = 0.0;
 static mut MASTER_Y_POS: f32 = 0.0;
