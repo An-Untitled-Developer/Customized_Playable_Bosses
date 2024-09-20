@@ -31,8 +31,8 @@ static mut STOP : bool = false;
 static mut EXISTS_PUBLIC : bool = false;
 static mut CONTROLLER_X: f32 = 0.0;
 static mut CONTROLLER_Y: f32 = 0.0;
-static mut CONTROL_SPEED_MUL: f32 = 1.25;
-static mut CONTROL_SPEED_MUL_2: f32 = 0.05;
+static mut CONTROL_SPEED_MUL: f32 = 1.35;
+static mut CONTROL_SPEED_MUL_2: f32 = 0.08;
 static mut HIDDEN_CPU : [u32; 8] = [0; 8];
 
 extern "C" {
@@ -157,7 +157,7 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
                                 BOSS_ID[entry_id(module_accessor)] = ItemModule::get_have_item_id(module_accessor, 0) as u32;
                                 let boss_boma = sv_battle_object::module_accessor(BOSS_ID[entry_id(module_accessor)]);
                                 WorkModule::set_float(boss_boma, 10.0, *ITEM_INSTANCE_WORK_FLOAT_LEVEL);
-                                WorkModule::set_float(boss_boma, 1.0, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
+                                WorkModule::set_float(boss_boma, 1.1, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
                                 ModelModule::set_scale(module_accessor, 0.0001);
                                 if dharkon::check_status() {
                                     // MotionModule::change_motion(boss_boma,smash::phx::Hash40::new("entry2"),0.0,1.0,false,0.0,false,false);
@@ -211,7 +211,7 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
                             BOSS_ID[entry_id(module_accessor)] = ItemModule::get_have_item_id(module_accessor, 0) as u32;
                             let boss_boma = sv_battle_object::module_accessor(BOSS_ID[entry_id(module_accessor)]);
                             WorkModule::set_float(boss_boma, 10.0, *ITEM_INSTANCE_WORK_FLOAT_LEVEL);
-                            WorkModule::set_float(boss_boma, 1.0, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
+                            WorkModule::set_float(boss_boma, 1.1, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
                             WorkModule::set_int(boss_boma, *ITEM_TRAIT_FLAG_BOSS, *ITEM_INSTANCE_WORK_INT_TRAIT_FLAG);
                             WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP_MAX);
                             WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP);
