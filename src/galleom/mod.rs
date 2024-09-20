@@ -139,7 +139,7 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
                             BOSS_ID[entry_id(module_accessor)] = ItemModule::get_have_item_id(module_accessor, 0) as u32;
                             let boss_boma = sv_battle_object::module_accessor(BOSS_ID[entry_id(module_accessor)]);
                             WorkModule::set_float(boss_boma, 10.0, *ITEM_INSTANCE_WORK_FLOAT_LEVEL);
-                            WorkModule::set_float(boss_boma, 1.0, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
+                            WorkModule::set_float(boss_boma, 1.165, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
                             WorkModule::set_int(boss_boma, *ITEM_TRAIT_FLAG_BOSS, *ITEM_INSTANCE_WORK_INT_TRAIT_FLAG);
                             WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP_MAX);
                             WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP);
@@ -177,7 +177,7 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
                         BOSS_ID[entry_id(module_accessor)] = ItemModule::get_have_item_id(module_accessor, 0) as u32;
                         let boss_boma = sv_battle_object::module_accessor(BOSS_ID[entry_id(module_accessor)]);
                         WorkModule::set_float(boss_boma, 10.0, *ITEM_INSTANCE_WORK_FLOAT_LEVEL);
-                        WorkModule::set_float(boss_boma, 1.0, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
+                        WorkModule::set_float(boss_boma, 1.165, *ITEM_INSTANCE_WORK_FLOAT_STRENGTH);
                         WorkModule::set_int(boss_boma, *ITEM_TRAIT_FLAG_BOSS, *ITEM_INSTANCE_WORK_INT_TRAIT_FLAG);
                         WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP_MAX);
                         WorkModule::set_float(boss_boma, 999.0, *ITEM_INSTANCE_WORK_FLOAT_HP);
@@ -463,7 +463,7 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
 
                     if sv_information::is_ready_go() == true {
                         if FighterUtil::is_hp_mode(module_accessor) == false {
-                            if DamageModule::damage(module_accessor, 0) >= 700.0 {
+                            if DamageModule::damage(module_accessor, 0) >= 875.0 {
                                 if !DEAD {
                                     CONTROLLABLE = false;
                                     DEAD = true;
@@ -574,11 +574,11 @@ extern "C" fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
                         }
                     }
 
-                    if DamageModule::damage(module_accessor, 0) >= 220.0 && !DEAD && sv_information::is_ready_go() {
+                    if DamageModule::damage(module_accessor, 0) >= 100.0 && !DEAD && sv_information::is_ready_go() {
                         if IS_ANGRY == false {
                             CONTROLLABLE = false;
                             IS_ANGRY = true;
-                            DamageModule::add_damage(module_accessor, 1.0, 0);
+                            DamageModule::add_damage(module_accessor, 1.4, 0);
                             StatusModule::change_status_request_from_script(boss_boma,*ITEM_GALLEOM_STATUS_KIND_ANGER,true);
                         }
                     }
